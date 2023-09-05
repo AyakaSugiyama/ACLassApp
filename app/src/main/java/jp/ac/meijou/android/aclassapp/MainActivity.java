@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    private int textRes = R.string.my_name;
     private int imageRes = R.drawable.ic_android;
 
     @Override
@@ -25,11 +26,24 @@ public class MainActivity extends AppCompatActivity {
         binding.text.setText(R.string.my_name);
 
         binding.buttonText.setOnClickListener(View ->{
-            binding.text.setText(textRes);
-            if(textRes == R.string.my_name){
-                textRes=R.string.meijou;
-            }else{
-                textRes=R.string.my_name;
+            var text = binding.editText.getText().toString();
+            binding.text.setText(text);
+        });
+
+        binding.editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                binding.text.setText(s.toString());
             }
         });
 
