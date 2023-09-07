@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity3">
+
+    <Button
+        android:id="@+id/button_meiji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="明示的Intent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_anmoku"
+         />
+
+    <Button
+        android:id="@+id/button_anmoku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暗黙的Intent"
+        app:layout_constraintTop_toTopOf="@id/button_meiji"
+        app:layout_constraintStart_toEndOf="@id/button_meiji"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+    <EditText
+        android:id="@+id/editTextNyuryoku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintTop_toTopOf="@id/button_soshin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_soshin"
+         />
+
+    <Button
+        android:id="@+id/button_soshin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="送信"
+        app:layout_constraintTop_toBottomOf="@id/button_anmoku"
+        app:layout_constraintStart_toEndOf="@id/editTextNyuryoku"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/firstText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reslut:"
+        app:layout_constraintTop_toBottomOf="@id/editTextNyuryoku"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_kido"
+        />
+
+    <Button
+        android:id="@+id/button_kido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="起動"
+        app:layout_constraintTop_toBottomOf="@id/firstText"
+        app:layout_constraintStart_toEndOf="@id/firstText"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
